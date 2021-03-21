@@ -260,11 +260,6 @@ b {
   overflow: hidden;
 }
 
-.header.wrap,
-.nav.wrap {
-  margin-top: -5px;
-}
-
 .header.wrap>*,
 .nav.wrap>* {
   margin-top: 5px;
@@ -312,6 +307,9 @@ b {
 }
 
 .nav.item {
+  font-size: 1em;
+  font-weight: 800;
+  color: #c7d5f6;
   display: inline-block;
   padding: 4px 6px;
 }
