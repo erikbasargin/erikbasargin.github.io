@@ -16,6 +16,7 @@ tags = [
     "dependencies"
 ]
 categories = [
+    "external",
     "dev",
     "ru"
 ]

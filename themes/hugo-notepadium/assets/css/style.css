@@ -381,7 +381,11 @@ b {
   text-decoration: none;
 }
 
-.note.title,
+.note.title {
+  font-size: 1.525em;
+  font-weight: 700;
+}
+
 .site.name {
   font-size: 1.125em;
   font-weight: 600;

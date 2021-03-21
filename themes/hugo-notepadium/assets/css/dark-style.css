@@ -37,6 +37,10 @@ pre {
   color: #6ae;
 }
 
+.site.logo {
+  filter: invert(100%);
+}
+
 .title,
 .site.name {
   color: #c7d5f6;
