@@ -2,11 +2,19 @@
 <section class="article navigation">
     {{- with .NextInSection -}}
       {{- $title := .Title | safeHTML -}}
-      {{- if $title -}}<p><a class="link" href="{{- .RelPermalink -}}"><span class="iconfont icon-article"></span>{{- $title -}}</a></p>{{- end -}}
+      {{- $hRef := .Params.redirectURI -}}
+      {{- if not $hRef -}}{{- $hRef = .RelPermalink -}}{{- end -}}
+      {{- $relURL := replace $hRef "#" "%23" -}}
+      {{- $relURL = replace $relURL "." "%2e" -}}
+      {{- if $title -}}<p><a class="link" href="{{- $relURL -}}"><span class="iconfont icon-article"></span>{{- $title -}}</a></p>{{- end -}}
     {{- end -}}
     {{- with .PrevInSection -}}
       {{- $title := .Title | safeHTML -}}
-      {{- if $title -}}<p><a class="link" href="{{- .RelPermalink -}}"><span class="iconfont icon-article"></span>{{- .Title | safeHTML -}}</a></p>{{- end -}}
+      {{- $hRef := .Params.redirectURI -}}
+      {{- if not $hRef -}}{{- $hRef = .RelPermalink -}}{{- end -}}
+      {{- $relURL := replace $hRef "#" "%23" -}}
+      {{- $relURL = replace $relURL "." "%2e" -}}
+      {{- if $title -}}<p><a class="link" href="{{- $relURL -}}"><span class="iconfont icon-article"></span>{{- .Title | safeHTML -}}</a></p>{{- end -}}
     {{- end -}}
 </section>
 {{- end -}}
