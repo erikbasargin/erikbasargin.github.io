@@ -1,0 +1,29 @@
+{
+    "applinks": {
+        "details": [
+            {
+                "appID": "S8BXS2P4Z9.com.odclite",
+                "components": [
+                    {
+                        "#": "no_universal_links",
+                        "exclude": true,
+                        "comment": "Matches any URL with a fragment that equals no_universal_links and instructs the system not to open it as a universal link."
+                    },
+                    {
+                        "/": "/twitch/auth",
+                        "#": {
+                            "access_token": "?*",
+                            "scope": "?*",
+                            "state": "?*",
+                            "token_type": "bearer"
+                        },
+                        "comment": "Matches Twitch auth redirect URI."
+                    }
+                ]
+            }
+        ]
+    },
+    "webcredentials": {
+        "apps": [ "S8BXS2P4Z9.com.odclite" ]
+    }
+}
