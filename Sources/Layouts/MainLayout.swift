@@ -4,19 +4,13 @@ import Ignite
 struct MainLayout: Layout {
     
     var body: some HTML {
-        HTMLDocument {
-            HTMLHead(for: page)
+        Body {
+            MyNavigationBar()
             
-            HTMLBody {
-                MyNavigationBar()
-                
-                Section(page.body)
-                    .padding(.top, .large)
-                
-                Section {
-                    MyFooter()
-                }
-            }
+            content
+                .padding(.top, .large)
+            
+            MyFooter()
         }
     }
 }

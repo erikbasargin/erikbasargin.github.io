@@ -1,5 +1,5 @@
 ---
-layout: ArticleContentLayout
+layout: Story
 tags: Swift
 lastModified: 2020-03-30 16:37:21
 ---

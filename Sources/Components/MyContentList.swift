@@ -9,13 +9,13 @@ import Ignite
 
 struct MyContentList: HTML {
     
-    let content: [Content]
+    let articles: [Article]
     
     var body: some HTML {
         VStack(spacing: .large) {
-            ForEach(content) { content in
-                VStack(spacing: .medium) {
-                    VStack {
+            ForEach(articles) { content in
+                VStack(alignment: .leading, spacing: .medium) {
+                    VStack(alignment: .leading) {
                         Link(content)
                             .font(.title3)
                             .fontWeight(.bold)
@@ -31,7 +31,7 @@ struct MyContentList: HTML {
                     
                     Text(content.description)
                     
-                    TagsSection(tags: content.tags)
+                    TagsSection(article: content)
                 }
                 .contentBlock()
             }

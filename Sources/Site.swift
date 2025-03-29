@@ -4,7 +4,7 @@ import Ignite
 @main
 struct IgniteWebsite {
     static func main() async {
-        let site = ExampleSite()
+        var site = ExampleSite()
         
         do {
             try await site.publish()
@@ -19,6 +19,9 @@ struct ExampleSite: Site {
     let titleSuffix = " – Erik's Blog"
     let author = "Erik Basargin"
     let builtInIconsEnabled = true
+    
+    let prettifyHTML: Bool = false // fix for https://github.com/twostraws/Ignite/issues/474
+    
     let syntaxHighlighters: [HighlighterLanguage] = [
         .swift,
     ]
@@ -32,31 +35,42 @@ struct ExampleSite: Site {
     }
     
     let homePage = Home()
+    let tagPage = Tags()
     let layout = MainLayout()
-    let tagLayout = MyTagLayout()
-    let lightTheme: (any Theme)? = nil
-    let darkTheme: (any Theme)? = MyDarkTheme()
     
-    var contentLayouts: [any ContentLayout] {
-        ArticleContentLayout()
+    let lightTheme: (any Theme)? = MyDarkTheme()
+    let darkTheme: (any Theme)? = nil
+    
+    var articlePages: [any ArticlePage] {
+        Story()
     }
 }
 
-struct MyDarkTheme: DarkTheme {
-    static var name: String = "dark"
+struct MyDarkTheme: Theme {
+    
+    let colorScheme: Ignite.ColorScheme = .dark
+    let syntaxHighlighterTheme: HighlighterTheme = .xcodeDark
+    
     let accent: Color = .MyDarkTheme.accent
     let secondaryAccent: Color = .MyDarkTheme.secondaryAccent
     let heading: Color = .MyDarkTheme.accent
     let link: Color = .MyDarkTheme.accent
     let linkDecoration: TextDecoration = .none
-    let syntaxHighlighterTheme: HighlighterTheme = .xcodeDark
     
     let background: Color = .MyDarkTheme.background
+    var secondary: Color = .red
+    var tertiaryBackground: Color = .blue
     
-    let mediumMaxWidth: LengthUnit = .px(768)
-    let largeMaxWidth: LengthUnit = .px(768)
-    let xLargeMaxWidth: LengthUnit = .px(768)
-    let xxLargeMaxWidth: LengthUnit = .px(768)
+    var siteWidth: ResponsiveValues<LengthUnit> {
+        .init(
+            nil,
+            small: nil,
+            medium: .px(768),
+            large: .px(768),
+            xLarge: .px(768),
+            xxLarge: .px(768)
+        )
+    }
 }
 
 

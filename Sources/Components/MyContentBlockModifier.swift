@@ -7,20 +7,12 @@
 
 import Ignite
 
-struct MyContentBlockModifier: HTMLModifier {
-    
-    func body(content: some HTML) -> any HTML {
-        content
-            .padding()
-            .cornerRadius(6)
-            .shadow(radius: 6)
-            .background(.MyDarkTheme.contentBackground)
-    }
-}
-
 extension HTML {
     
     func contentBlock() -> some HTML {
-        modifier(MyContentBlockModifier())
+        padding()
+            .cornerRadius(6)
+            .shadow(radius: 6)
+            .background(.MyDarkTheme.contentBackground)
     }
 }

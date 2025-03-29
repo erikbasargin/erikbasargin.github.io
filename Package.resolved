@@ -1,5 +1,5 @@
 {
-  "originHash" : "dbf104f3b04cf8878ceb2a3a90163394d36e11d9e6963799d390ee7d5bc1c263",
+  "originHash" : "9b5508167183cc86f6f3bc07d8a556c199802edff963b4745cbcb145b32340ed",
   "pins" : [
     {
       "identity" : "ignite",
@@ -7,7 +7,7 @@
       "location" : "https://github.com/twostraws/Ignite.git",
       "state" : {
         "branch" : "main",
-        "revision" : "8ebe768590ad79baef08f9313961081eb1f2f9b0"
+        "revision" : "6a62f28d2f3ea5a3829615c625109055e6b09dff"
       }
     },
     {
@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/scinfu/SwiftSoup.git",
       "state" : {
-        "revision" : "6b4930da67b462d3f200472c902dd016d37a554d",
-        "version" : "2.7.7"
+        "revision" : "bba848db50462894e7fc0891d018dfecad4ef11e",
+        "version" : "2.8.7"
       }
     }
   ],

@@ -8,18 +8,21 @@
 import Foundation
 import Ignite
 
-public struct MyFooter: HTML {
-    public init() {}
-
-    public var body: some HTML {
+struct MyFooter: HTML {
+    
+    var body: some HTML {
         VStack {
-            Text("©\(Calendar.current.component(.year, from: .now)) Erik Basargin.")
+            CodeBlock(.swift) {
+                "©\(Calendar.current.component(.year, from: .now)) Erik Basargin"
+            }
+            .background(.clear)
+            
             Text {
                 "Powered by "
                 Link("Ignite", target: URL(static: "https://github.com/twostraws/Ignite"))
             }
         }
-        .horizontalAlignment(.center)
+        .frame(alignment: .center)
         .margin(.vertical, .xLarge)
         .font(.system(size: .px(12)))
     }

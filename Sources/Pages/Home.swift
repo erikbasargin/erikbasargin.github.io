@@ -1,13 +1,13 @@
 import Foundation
 import Ignite
 
-struct Home: StaticLayout {
+struct Home: StaticPage {
     
-    @Environment(\.content) private var content
+    @Environment(\.articles) private var articles
     
     let title = "Home"
     
     var body: some HTML {
-        MyContentList(content: content.typed("article"))
+        MyContentList(articles: articles.all)
     }
 }
