@@ -15,6 +15,7 @@ struct MyNavigationBar: HTML {
     var body: some HTML {
         NavigationBar {
             Link("Tags", target: "/tags")
+            Link("Apps", target: "/apps")
             Link("GitHub", target: "https://github.com/erikbasargin")
         } logo: {
             Text(site.name)

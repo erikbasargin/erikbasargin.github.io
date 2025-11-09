@@ -33,7 +33,7 @@ struct Tags: TagPage {
         .contentBlock()
         .margin(.bottom, .large)
         
-        MyContentList(articles: tag.articles)
+        MyContentList(articles: tag.articles.filter({ $0.tags?.isEmpty == false }))
     }
 }
 

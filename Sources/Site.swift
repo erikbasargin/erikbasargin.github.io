@@ -43,6 +43,12 @@ struct ExampleSite: Site {
     
     var articlePages: [any ArticlePage] {
         Story()
+        App()
+        PrivacyPolicy()
+    }
+    
+    var staticPages: [any StaticPage] {
+        Apps()
     }
 }
 
