@@ -20,10 +20,6 @@ struct MyContentList: HTML {
                             .font(.title3)
                             .fontWeight(.bold)
                             .foregroundStyle(.MyDarkTheme.accent)
-                            .hoverEffect { effect in
-                                effect
-                                    .foregroundStyle(.MyDarkTheme.secondaryAccent)
-                            }
                         
                         Text(content.lastModified.formatted(date: .abbreviated, time: .omitted))
                             .foregroundStyle(.MyDarkTheme.secondaryAccent)

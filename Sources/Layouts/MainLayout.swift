@@ -3,7 +3,7 @@ import Ignite
 
 struct MainLayout: Layout {
     
-    var body: some HTML {
+    var body: some Document {
         Body {
             MyNavigationBar()
             

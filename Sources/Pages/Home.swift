@@ -8,11 +8,6 @@ struct Home: StaticPage {
     let title = "Home"
     
     var body: some HTML {
-        MyContentList(articles: articles.all.filter({ article in
-            guard let rawType = article.metadata["type"] else {
-                return false
-            }
-            return "\(rawType)" == "article"
-        }))
+        MyContentList(articles: articles.typed("article"))
     }
 }

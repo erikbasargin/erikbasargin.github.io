@@ -7,7 +7,7 @@ let package = Package(
     name: "MyBlog",
     platforms: [.macOS(.v13)],
     dependencies: [
-        .package(url: "https://github.com/twostraws/Ignite.git", branch: "main"),
+        .package(url: "https://github.com/twostraws/Ignite.git", from: "0.6.0"),
     ],
     targets: [
         .executableTarget(

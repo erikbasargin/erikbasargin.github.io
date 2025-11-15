@@ -18,8 +18,12 @@ struct MyNavigationBar: HTML {
             Link("Apps", target: "/apps")
             Link("GitHub", target: "https://github.com/erikbasargin")
         } logo: {
-            Text(site.name)
-                .font(.title2)
+            Label {
+                site.name
+            } icon: {
+                
+            }
+            .font(.title2)
         }
         .navigationItemAlignment(.trailing)
     }

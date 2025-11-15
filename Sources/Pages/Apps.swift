@@ -15,11 +15,6 @@ struct Apps: StaticPage {
     let title = "Apps"
     
     var body: some HTML {
-        MyAppsGrid(articles: articles.all.filter({ article in
-            guard let rawType = article.metadata["type"] else {
-                return false
-            }
-            return "\(rawType)" == "app"
-        }))
+        MyAppsGrid(articles: articles.typed("app"))
     }
 }
